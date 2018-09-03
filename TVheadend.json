@@ -1,0 +1,50 @@
+{
+    "TVheadend": {
+        "containers": {
+            "TVheadend": {
+                "image": "linuxserver/tvheadend",
+                "launch_order": 1,
+				"opts": [
+                    [
+						"--device=/dev/dvb",
+						""
+					]
+				],	
+                "ports": {
+                    "9981": {
+                        "description": "TV Headend WebUI port, Suggested default: 9981",
+                        "host_default": 9981,
+                        "label": "WebUI port",
+                        "protocol": "tcp",
+                        "ui": true
+                    },
+					"9982": {
+                        "description": "TV Headend, Suggested default: 9981",
+                        "host_default": 9982,
+                        "label": "WebUI port",
+                        "protocol": "tcp"
+                    }
+                },
+                "volumes": {
+                    "/config": {
+                        "description": "for /config.",
+                        "label": "/config"
+                    },
+					"/recordings": {
+                        "description": "for /recordings.",
+                        "label": "/recordings"
+                    }
+					
+                }
+            }
+        },
+        "description": "TV backend",
+        "more_info": "none",
+        "ui": {
+            "slug": ""
+        },
+        "volume_add_support": true,
+        "website": "https://hub.docker.com/r/linuxserver/tvheadend/",
+	"version": "1.0"
+    }
+}

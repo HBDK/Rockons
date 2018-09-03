@@ -1,0 +1,43 @@
+{
+    "mosquitto": {
+        "containers": {
+            "eclipse-mosquitto": {
+                "image": "eclipse-mosquitto",
+                "launch_order": 1,
+                "ports": {
+                    "1883": {
+                        "description": "Default port for unencrypted connections",
+                        "host_default": 1883,
+                        "label": "unencrypted",
+                        "protocol": "tcp"
+                    },
+                    "9001": {
+                        "description": "Default port for encrypted connections",
+                        "host_default": 9001,
+                        "label": "encrypted",
+                        "protocol": "tcp"
+                    }
+                },
+                "volumes": {
+                    "/mosquitto/config": {
+                        "description": "Choose a Share for configuration.",
+                        "label": "Config Storage",
+                        "min_size": 1073741824
+                    },
+                    "/mosquitto/data": {
+                        "description": "Choose a Share for persistant data.",
+                        "label": "Data Storage"
+                    },
+                    "/mosquitto/log": {
+                        "description": "Choose a Share for logs.",
+                        "label": "Log Storage"
+                    }
+                }
+            }
+        },
+        "description": "Open source, lightweight MQTT broker",
+        "volume_add_support": false,
+        "website": "https://mosquitto.org/",
+	"version": "1.0"
+    }
+}
