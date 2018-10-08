@@ -1,0 +1,33 @@
+{
+    "steamcache": {
+        "containers": {
+            "steamcache": {
+                "image": "steamcache/steamcache",
+                "launch_order": 1,
+                "ports": {
+                    "80": {
+                        "description": "http port",
+                        "host_default": 80,
+                        "label": "unencrypted",
+                        "protocol": "tcp"
+                    }
+
+        },
+		"volumes": {
+                    "/data/cache": {
+                        "description": "Choose a Share for configuration.",
+                        "label": "Data folder"
+                    },
+                    "/data/logs": {
+                        "description": "Choose a Share for Storage",
+                        "label": "Log Folder"
+                    }
+                }
+            }
+                },
+        "description": "DNS server for steamcache",
+        "volume_add_support": false,
+        "website": "https://steamcache.github.io/",
+	"version": "1.0"
+    }
+}

@@ -1,0 +1,54 @@
+{
+    "steamcache": {
+        "containers": {
+            "steamcache": {
+                "image": "steamcache/steamcache",
+                "launch_order": 1,
+                "ports": {
+                    "80": {
+                        "description": "http port",
+                        "host_default": 80,
+                        "label": "unencrypted",
+                        "protocol": "tcp"
+                    }
+
+        },
+		"volumes": {
+                    "/data/cache": {
+                        "description": "Choose a Share for configuration.",
+                        "label": "Data folder"
+                    },
+                    "/data/logs": {
+                        "description": "Choose a Share for Storage",
+                        "label": "Log Folder"
+                    }
+                }
+            },
+            "steamcache-dns": {
+                "image": "steamcache/steamcache-dns",
+                "launch_order": 1,
+                "ports": {
+                    "53": {
+                        "description": "DNS port",
+                        "host_default": 53,
+                        "label": "unencrypted",
+                        "protocol": "udp"
+                    }
+        },
+                    "environment": {
+                        "STEAMCACHE_IP": {
+                        "description": "When set to 1, the automatic disc ripper is enabled.",
+                        "label": "STEAMCACHE IP",
+                        "index": 1
+                        }
+                        
+                    }
+                
+            }
+                },
+        "description": "DNS server for steamcache",
+        "volume_add_support": false,
+        "website": "https://steamcache.github.io/",
+	"version": "1.0"
+    }
+}
