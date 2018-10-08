@@ -13,3 +13,8 @@ this requires some changes to privileges for db devices see [this](https://forum
 
 ## makemkv
 you will have to change the two device options (sr0 and sg6) to fit your setup. i found the easiest way to find those values was by spinning a container up from the command line and read the logs as described in the [documentation](https://hub.docker.com/r/jlesage/makemkv/) for the container
+
+## Steamcache
+run both steamcache(must use port 80) and steamcache dns(must use port 53) and point the steamcache_ip to the steamcache rockon.
+see https://hub.docker.com/u/steamcache/ for more info.
+(steamcache -complete is currently not working)
