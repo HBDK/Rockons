@@ -26,7 +26,7 @@
             },
             "steamcache-dns": {
                 "image": "steamcache/steamcache-dns",
-                "launch_order": 1,
+                "launch_order": 2,
                 "ports": {
                     "53": {
                         "description": "DNS port",
