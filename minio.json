@@ -1,0 +1,45 @@
+{
+    "minio": {
+        "containers": {
+            "minio": {
+                "image": "minio/minio:latest",
+                "launch_order": 1,
+                "ports": {
+                    "9000": {
+                        "description": "HTTP port",
+                        "host_default": 9000,
+                        "label": "HTTP",
+                        "protocol": "tcp"
+                    }
+                },
+                "volumes": {
+                    "/root/.minio": {
+                        "description": "Choose a Share for config",
+                        "label": "config"
+                    },
+                    "/data": {
+                        "description": "Choose a Share for data",
+                        "label": "data"
+                    }
+                },
+                "environment": {
+                    "MINIO_ACCESS_KEY": {
+                        "description": "Access key of minimum 3 characters in length.",
+                        "label": "MINIO ACCESS KEY",
+                        "index": 1
+                    },
+                    "MINIO_SECRET_KEY": {
+                        "description": "Secret key of minimum 8 characters in length.",
+                        "label": "MINIO_SECRET_KEY",
+                        "index": 2
+                    }
+                },
+                "cmd_arguments":[ ["server", "/data"]]
+            }
+        },
+        "description": "Minio Service",
+        "volume_add_support": true,
+        "website": "https://docs.minio.io/docs/minio-docker-quickstart-guide.html",
+        "version": "1.0"
+    }
+}
