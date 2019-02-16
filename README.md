@@ -18,3 +18,9 @@ you will have to change the two device options (sr0 and sg6) to fit your setup. 
 run both steamcache(must use port 80) and steamcache dns(must use port 53) and point the steamcache_ip to the steamcache rockon.
 see https://hub.docker.com/u/steamcache/ for more info.
 (steamcache -complete is currently not working)
+
+## Minio
+i have had to use nginx to get https working with this one, so maybee only use it local or with reverse proxy that adds encryption.
+
+## influx DB
+No gui.
