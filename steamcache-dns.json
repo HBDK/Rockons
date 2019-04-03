@@ -4,6 +4,12 @@
             "steamcache-dns": {
                 "image": "steamcache/steamcache-dns",
                 "launch_order": 1,
+		"opts": [
+                    		[
+				"-e",
+				"USE_GENERIC_CACHE=true"
+				]
+			], 
                 "ports": {
                     "53": {
                         "description": "DNS port",
@@ -13,12 +19,12 @@
                     }
         },
                     "environment": {
-                        "STEAMCACHE_IP": {
-                        "description": "When set to 1, the automatic disc ripper is enabled.",
-                        "label": "STEAMCACHE IP",
+                        "LANCACHE_IP": {
+                        "description": "IP of the caching server",
+                        "label": "Chache IP",
                         "index": 1
                         }
-                        
+                      
                     }
                 
             }
