@@ -23,6 +23,11 @@
                         "description": "IP of the caching server",
                         "label": "Chache IP",
                         "index": 1
+                        },
+			"UPSTREAM_DNS": {
+                        "description": "IP of the upstream dns server (e.i. 8.8.8.8)",
+                        "label": "UPSTREAM DNS",
+                        "index": 2
                         }
                       
                     }
