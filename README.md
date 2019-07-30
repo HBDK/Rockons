@@ -24,3 +24,9 @@ i have had to use nginx to get https working with this one, so maybee only use i
 
 ## influx DB
 No gui.
+
+## Letsencrypt
+Linuxserver.io's [letsencrypt](https://github.com/linuxserver/docker-letsencrypt) contianer most use port 80 for http challenge.
+
+## Nextcloud
+Nextcloud using the linuxserver.io [contianer](https://github.com/linuxserver/docker-nextcloud)
