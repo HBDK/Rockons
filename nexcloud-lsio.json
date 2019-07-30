@@ -1,0 +1,51 @@
+{
+    "Nextcloud-lsio":{
+        "containers":{
+            "linuxserver-Nextcloud":{
+                "image":"linuxserver/nextcloud",
+                "launch_order":1,
+                "ports":{
+                    "443":{
+                        "description":"Https port",
+                        "host_default":6443,
+                        "label":"HTTPS",
+                        "protocol":"tcp",
+                        "ui":true
+                    }
+                },
+                "volumes":{
+                    "/config":{
+                        "description":"Choose a share where the Configs should be stored. Eg: create a share called Nextcloud-config for this purpose alone. ",
+                        "label":"Config Storage"
+                    },
+                    "/data":{
+                        "description":"Choose a share where the data should be stored. Eg: create a share called Nextcloud-data for this purpose alone. ",
+                        "label":"Data Storage"
+                    }
+                },
+                "environment":{
+                    "PUID":{
+                        "description":"Enter a valid UID to run Nextcloud as. It must have full permissions to the share mapped in the previous step.",
+                        "label":"UID to run Nextcloud as.",
+                        "index":1
+                    },
+                    "PGID":{
+                        "description":"Enter a valid GID to use along with the above UID. It (or the above UID) must have full permissions to the share mapped in the previous step.",
+                        "label":"GID to run Nextcloud as.",
+                        "index":2
+                    },
+                    "TZ":{
+                        "description":"Timezone I.e. Europe/London",
+                        "label":"Timezone",
+                        "index":3
+                    }
+                }
+            }
+        },
+        "description":"Nextcloud, Linuxserver Nextcloud contianer",
+        "volume_add_support":true,
+        "more_info": "Nextcloud gives you access to all your files wherever you are.",
+        "website":"https://hub.docker.com/r/linuxserver/nextcloud/",
+        "version":"1.0"
+    }
+}

@@ -1,0 +1,79 @@
+{
+    "LetsEncrypt":{
+        "containers":{
+            "linuxserver-letsencrypt":{
+                "image":"linuxserver/letsencrypt",
+                "opts": [
+                    [
+                        "--cap-add",
+                        "NET_ADMIN"
+                    ]],
+                "launch_order":1,
+                "ports":{
+                    "443":{
+                        "description":"Https port",
+                        "host_default":5443,
+                        "label":"HTTPS",
+                        "protocol":"tcp",
+                        "ui":false
+                    },
+                    "80":{
+                        "description":"Http port, must be 80",
+                        "host_default":80,
+                        "label":"HTTP",
+                        "protocol":"tcp",
+                        "ui":false
+                    }
+                },
+                "volumes":{
+                    "/config":{
+                        "description":"Choose a share where the Configs should be stored. Eg: create a share called LetsEncrypt-server1 for this purpose alone. ",
+                        "label":"Config Storage"
+                    }
+                },
+                "environment":{
+                    "PUID":{
+                        "description":"Enter a valid UID to run LetsEncrypt as. It must have full permissions to the share mapped in the previous step.",
+                        "label":"UID to run MariaDB as.",
+                        "index":1
+                    },
+                    "PGID":{
+                        "description":"Enter a valid GID to use along with the above UID. It (or the above UID) must have full permissions to the share mapped in the previous step.",
+                        "label":"GID to run MariaDB as.",
+                        "index":2
+                    },
+                    "TZ":{
+                        "description":"Timezone I.e. Europe/London",
+                        "label":"Timezone",
+                        "index":3
+                    },
+                    "URL":{
+                        "description":"yourdomain.url",
+                        "label":"Domain",
+                        "index":4
+                    },
+                    "SUBDOMAINS":{
+                        "description":"comma seperated no sapces I.e. www,ftp,cloud",
+                        "label":"Subdomains",
+                        "index":5
+                    },
+                    "VALIDATION":{
+                        "description":"Challenges type. use http",
+                        "label":"Validation",
+                        "index":6
+                    },
+                    "ONLY_SUBDOMAINS":{
+                        "description":"Is this the root of only subdomains (false true)",
+                        "label":"Only subdomains",
+                        "index":7
+                    }
+                }
+            }
+        },
+        "description":"LetsEncrypt, Nginx with lets encrypt",
+        "volume_add_support":false,
+        "more_info": "Letsencrypt sets up an Nginx webserver and reverse proxy with php support and a built-in letsencrypt client that automates free SSL server certificate generation and renewal processes. It also contains fail2ban for intrusion prevention.",
+        "website":"https://hub.docker.com/r/linuxserver/letsencrypt",
+        "version":"1.0"
+    }
+}
