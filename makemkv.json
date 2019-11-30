@@ -46,7 +46,7 @@
                         "description": "When set to 1, disc is ejected from the drive when ripping is terminated.",
                         "label": "AUTO EJECT",
                         "index": 2
-                        }
+                        },
 			"MAKEMKV_KEY":{
                         "description": "Makekmv key. Set to beta or own bought key",
                         "label": "MakeMKV key",
@@ -60,7 +60,7 @@
             "https": false,
             "slug": ""
         },
-        "volume_add_support": false,
+        "volume_add_support": true,
         "website": "https://hub.docker.com/r/jlesage/makemkv/",
 	"version": "1.0"
     }
