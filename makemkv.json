@@ -47,6 +47,11 @@
                         "label": "AUTO EJECT",
                         "index": 2
                         }
+			"MAKEMKV_KEY":{
+                        "description": "Makekmv key. Set to beta or own bought key",
+                        "label": "MakeMKV key",
+                        "index": 3
+                        }
                     }
             }
         },
